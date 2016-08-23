@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "image",
-              "location": "bitnami/swift:che-3.0-PREVIEW-6-r0"
+              "location": "bitnami/swift:che-3.0-PREVIEW-6-r1"
             },
             "type": "docker",
             "dev": true
