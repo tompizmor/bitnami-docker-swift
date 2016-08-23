@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "image",
-              "location": "juanariza131/che-swift"
+              "location": "bitnami/swift:che-3.0-PREVIEW-6-r0"
             },
             "type": "docker",
             "dev": true
@@ -30,7 +30,7 @@
         "path": "/swift-sample",
         "source": {
           "type": "git",
-          "location": "https://github.com/juan131/bitnami-docker-swift.git",
+          "location": "https://github.com/bitnami/bitnami-docker-swift.git",
           "parameters": {
             "branch": "che",
             "keepVcs": "true"

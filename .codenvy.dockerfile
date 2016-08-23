@@ -27,7 +27,7 @@ ENV PATH=/opt/bitnami/swift/bin:$PATH
 
 # Swift template
 ENV BITNAMI_APP_NAME=swift-che \
-    BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6
+    BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6-r0
 
 EXPOSE 80
 WORKDIR /projects
