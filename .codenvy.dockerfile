@@ -1,4 +1,4 @@
-FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r8
+FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r9
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
@@ -26,8 +26,8 @@ ENV PATH=/opt/bitnami/swift/bin:$PATH
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
 
 # Swift template
-ENV BITNAMI_APP_NAME=swift-che \
-    BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6-r1
+ENV BITNAMI_APP_NAME=swift \
+    BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6-r2
 
 EXPOSE 80
 WORKDIR /projects
