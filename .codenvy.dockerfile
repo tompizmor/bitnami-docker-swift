@@ -25,14 +25,13 @@ ENV PATH=/opt/bitnami/swift/bin:$PATH
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
 
+RUN chmod a+r /opt/bitnami/swift/lib/swift/CoreFoundation/module.modulemap
+
 # Swift template
 ENV BITNAMI_APP_NAME=swift \
     BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6-r2
 
-EXPOSE 80
+USER bitnami
 WORKDIR /projects
-
-# Interact with Eclipse che
-LABEL che:server:80:ref=swift che:server:80:protocol=http
 
 CMD ["tail", "-f", "/dev/null"]
