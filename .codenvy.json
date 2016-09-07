@@ -30,14 +30,12 @@
         "path": "/swift-sample",
         "source": {
           "type": "git",
-          "location": "https://github.com/bitnami/bitnami-docker-swift.git",
+          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
           "parameters": {
-            "branch": "che",
-            "keepVcs": "true"
+            "keepVcs": "false"
           }
         },
         "mixins": [
-          "git",
           "pullrequest"
         ],
         "attributes": {
@@ -50,15 +48,15 @@
     ],
     "commands": [
       {
-        "name": "build and start",
+        "name": "2. Run",
         "type": "custom",
         "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path}/app_template && swift build && ./.build/debug/app_template",
         "attributes": {}
       },
       {
-        "name": "create project - run first",
+        "name": "1. Create project",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template &&  swift-package init --type executable && swift build",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template &&  swift-package init --type executable && swift build && echo \"Project built successfully.\"",
         "attributes": {}
       }
     ]
@@ -68,7 +66,7 @@
       "actions": [
         {
           "properties": {
-            "name": "build sample project"
+            "name": "1. Create project"
           },
           "id": "runCommand"
         }
