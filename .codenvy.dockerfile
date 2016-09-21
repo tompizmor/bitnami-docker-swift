@@ -20,7 +20,7 @@ RUN bitnami-pkg install python-2.7.12rc1-0 --checksum 2c56021761411358b949fa0c96
 ENV PATH=/opt/bitnami/python/bin:$PATH
 
 # Swift module
-RUN bitnami-pkg install swift-3.0-PREVIEW-6-0 --checksum 36e3739c1a22bec70a4f256ff82aab10fc1996f89d85a050fe6b9cb072b3fb94
+RUN bitnami-pkg install swift-3.0-RELEASE-0 --checksum 260203f5915cd861c47adc6b9f2fb261702be9bebfcd82b056b7c15c50894043
 ENV PATH=/opt/bitnami/swift/bin:$PATH
 
 ## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
@@ -29,7 +29,7 @@ RUN chmod a+r /opt/bitnami/swift/lib/swift/CoreFoundation/module.modulemap
 
 # Swift template
 ENV BITNAMI_APP_NAME=swift \
-    BITNAMI_IMAGE_VERSION=3.0-PREVIEW-6-r2
+    BITNAMI_IMAGE_VERSION=3.0-RELEASE-r0
 
 USER bitnami
 WORKDIR /projects
