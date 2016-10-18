@@ -1,36 +1,37 @@
 {
   "v": "4.0",
   "workspace": {
-    "name": "swift",
-    "defaultEnv": "swift",
-    "environments": [
-      {
-        "name": "swift",
-        "recipe": null,
-        "machineConfigs": [
-          {
-            "name": "ws-machine",
-            "limits": {
-              "ram": 1024
-            },
-            "source": {
-              "type": "image",
-              "location": "bitnami/che-swift:che-3.0-RELEASE-r0"
-            },
-            "type": "docker",
-            "dev": true
+    "environments": {
+      "default": {
+        "recipe": {
+          "type": "dockerimage",
+          "location": "bitnami/che-swift:che-3.0-RELEASE-r1"
+        },
+        "machines": {
+          "ws-machine": {
+            "agents": [
+              "org.eclipse.che.terminal",
+              "org.eclipse.che.ws-agent",
+              "org.eclipse.che.ssh"
+            ],
+            "servers": {},
+            "attributes": {
+              "memoryLimitsBytes": "1073741824"
+            }
           }
-        ]
+        }
       }
-    ],
+    },
+    "name": "bitnami-swift",
+    "defaultEnv": "default",
     "projects": [
       {
-        "name": "swift-sample",
+        "name": "swift",
         "type": "blank",
-        "path": "/swift-sample",
+        "path": "/swift",
         "source": {
           "type": "git",
-          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
+          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample.git",
           "parameters": {
             "keepVcs": "false"
           }
@@ -56,7 +57,7 @@
       {
         "name": "1. Create project",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template &&  swift-package init --type executable && swift build && echo \"Project built successfully.\"",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template && swift-package init --type executable && swift build && echo \"Project built successfully.\"",
         "attributes": {}
       }
     ]
