@@ -22,7 +22,7 @@
         }
       }
     },
-    "name": "bitnami-swift",
+    "name": "swift",
     "defaultEnv": "default",
     "projects": [
       {
