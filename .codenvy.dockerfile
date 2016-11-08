@@ -1,9 +1,9 @@
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r2
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r3
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV BITNAMI_APP_NAME=swift \
-    BITNAMI_IMAGE_VERSION=3.0-RELEASE-r3 \
+ENV BITNAMI_APP_NAME=che-swift \
+    BITNAMI_IMAGE_VERSION=che-3.0-RELEASE-r4 \
     PATH=/opt/bitnami/python/bin:/opt/bitnami/swift/bin:$PATH
 
 # Install Swift dependencies
@@ -27,4 +27,4 @@ WORKDIR /projects
 
 ENV TERM=xterm
 
-CMD ["/entrypoint.sh", "tail", "-f", "/dev/null"]
+CMD [ "tail", "-f", "/dev/null"]

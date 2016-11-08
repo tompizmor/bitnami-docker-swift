@@ -5,7 +5,7 @@
       "default": {
         "recipe": {
           "type": "dockerimage",
-          "location": "bitnami/che-swift:che-3.0-RELEASE-r3"
+          "location": "bitnami/che-swift:che-3.0-RELEASE-r4"
         },
         "machines": {
           "ws-machine": {
@@ -51,13 +51,13 @@
       {
         "name": "2. Run",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path}/app_template && swift build 2>&1 | grep -v \"no version information available\"; ./.build/debug/app_template",
+        "commandLine": "print-help && cd ${current.project.path}/app_template && swift build 2>&1 | grep -v \"no version information available\"; ./.build/debug/app_template",
         "attributes": {}
       },
       {
         "name": "1. Create project",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template && swift-package init --type executable 2>&1 | grep -v \"no version information available\"; swift build 2>&1 | grep -v \"no version information available\"; echo \"Project built successfully.\"",
+        "commandLine": "print-help && mkdir ${current.project.path}/app_template && cd ${current.project.path}/app_template && swift-package init --type executable 2>&1 | grep -v \"no version information available\"; swift build 2>&1 | grep -v \"no version information available\"; echo \"Project built successfully.\"",
         "attributes": {}
       }
     ]
