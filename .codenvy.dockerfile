@@ -16,7 +16,7 @@ RUN apt-get update && \
 RUN bitnami-pkg install python-2.7.12-1 --checksum 1ab49b32453c509cf6ff3abb9dbe8a411053e3b811753a10c7a77b4bc19606df
 
 # Install Swift module
-RUN bitnami-pkg install swift-3.0.1-RELEASE-0 --checksum 260203f5915cd861c47adc6b9f2fb261702be9bebfcd82b056b7c15c50894043
+RUN bitnami-pkg install swift-3.0.1-RELEASE-0 --checksum 4ae1a8804910f5f265133edf2897d86b9aac3daacbe51ab30bd29bd2a12acce7
 ENV PATH=$PATH
 
 RUN chmod a+r /opt/bitnami/swift/lib/swift/CoreFoundation/module.modulemap
