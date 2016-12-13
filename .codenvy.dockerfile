@@ -1,9 +1,9 @@
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r3
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r6
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=che-swift \
-    BITNAMI_IMAGE_VERSION=che-3.0.1-RELEASE-r0 \
+    BITNAMI_IMAGE_VERSION=che-3.0.1-RELEASE-r1 \
     PATH=/opt/bitnami/python/bin:/opt/bitnami/swift/bin:$PATH
 
 # Install Swift dependencies
