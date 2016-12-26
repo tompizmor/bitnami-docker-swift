@@ -1,22 +1,15 @@
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r6
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r7
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=che-swift \
-    BITNAMI_IMAGE_VERSION=3.0.1-RELEASE-r2 \
+    BITNAMI_IMAGE_VERSION=3.0.2-RELEASE-r0 \
     PATH=/opt/bitnami/python/bin:/opt/bitnami/swift/bin:$PATH
 
-# Install Swift dependencies
-RUN apt-get update && \
-    apt-get install -y clang libedit2 libicu52 libsqlite3-dev libxml2 && \
-    apt-get clean && \
-    apt-get -y autoremove && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN bitnami-pkg install python-2.7.12-1 --checksum 1ab49b32453c509cf6ff3abb9dbe8a411053e3b811753a10c7a77b4bc19606df
+RUN install_packages --no-install-recommends libc6 libtinfo5 zlib1g libuuid1 libstdc++6 libgcc1 libxml2 libcurl3 liblzma5 libidn11 librtmp1 libssh2-1 libssl1.0.0 libgssapi-krb5-2 libkrb5-3 libk5crypto3 libcomerr2 libldap-2.4-2 libbsd0 libgnutls-deb0-28 libhogweed2 libnettle4 libgmp10 libgcrypt20 libkrb5support0 libkeyutils1 libsasl2-2 libp11-kit0 libtasn1-6 libgpg-error0 libffi6 libedit2 libncurses5 libsqlite3-0 python libpython2.7 clang libicu52 libsqlite3-dev
 
 # Install Swift module
-RUN bitnami-pkg install swift-3.0.1-RELEASE-0 --checksum 4ae1a8804910f5f265133edf2897d86b9aac3daacbe51ab30bd29bd2a12acce7
+RUN bitnami-pkg install swift-3.0.2-RELEASE-0 --checksum ba0916463cdf43b77735a7c5f90f440b8da6bcf218e36a1f5fc8b58d9c5cc79b
 ENV PATH=$PATH
 
 RUN chmod a+r /opt/bitnami/swift/lib/swift/CoreFoundation/module.modulemap
