@@ -3,7 +3,7 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r8
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=che-swift \
-    BITNAMI_IMAGE_VERSION=3.0.2-RELEASE-r0 \
+    BITNAMI_IMAGE_VERSION=3.0.2-RELEASE-r1 \
     PATH=/opt/bitnami/python/bin:/opt/bitnami/swift/bin:$PATH
 
 RUN install_packages --no-install-recommends libc6 libtinfo5 zlib1g libuuid1 libstdc++6 libgcc1 libxml2 libcurl3 liblzma5 libidn11 librtmp1 libssh2-1 libssl1.0.0 libgssapi-krb5-2 libkrb5-3 libk5crypto3 libcomerr2 libldap-2.4-2 libbsd0 libgnutls-deb0-28 libhogweed2 libnettle4 libgmp10 libgcrypt20 libkrb5support0 libkeyutils1 libsasl2-2 libp11-kit0 libtasn1-6 libgpg-error0 libffi6 libedit2 libncurses5 libsqlite3-0 python libpython2.7 clang libicu52 libsqlite3-dev
